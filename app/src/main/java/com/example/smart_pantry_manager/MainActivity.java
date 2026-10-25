@@ -56,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
         );
 
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            int ingredientId = ingredientIds.get(position);
+
+            Intent intent = new Intent(MainActivity.this, AddIngredientActivity.class);
+            intent.putExtra("ingredient_id", ingredientId);
+
+            startActivity(intent);
+        });
         listView.setOnItemLongClickListener((parent, view, position, id) -> {
 
             int ingredientId = ingredientIds.get(position);

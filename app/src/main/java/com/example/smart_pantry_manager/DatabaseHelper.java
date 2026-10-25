@@ -65,4 +65,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return result > 0;
     }
+    public boolean updateIngredient(int id, String name, double quantity, String unit) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("name", name);
+        values.put("quantity", quantity);
+        values.put("unit", unit);
+
+        int result = db.update(
+                "ingredients",
+                values,
+                "id = ?",
+                new String[]{String.valueOf(id)}
+        );
+
+        db.close();
+
+        return result > 0;
+    }
+    public Cursor getIngredientById(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        return db.rawQuery(
+                "SELECT * FROM ingredients WHERE id = ?",
+                new String[]{String.valueOf(id)}
+        );
+    }
 }
