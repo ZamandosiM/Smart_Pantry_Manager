@@ -93,9 +93,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        databaseHelper.preloadRecipes();
         loadIngredients();
+
         findViewById(R.id.btnAddIngredient).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AddIngredientActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btnViewRecipes).setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    MainActivity.this,
+                    SuggestRecipesActivity.class
+            );
+            startActivity(intent);
+        });
+        findViewById(R.id.btnSettings).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intent);
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
