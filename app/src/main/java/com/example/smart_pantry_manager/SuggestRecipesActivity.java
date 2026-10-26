@@ -27,7 +27,7 @@ public class SuggestRecipesActivity extends AppCompatActivity {
         ArrayList<String> recipeNames = new ArrayList<>();
         ArrayList<Long> recipeIds = new ArrayList<>();
 
-        Cursor cursor = databaseHelper.getAllRecipes();
+        Cursor cursor = databaseHelper.getSuggestedRecipes();
 
         while (cursor.moveToNext()) {
             String recipeName = cursor.getString(
