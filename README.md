@@ -43,3 +43,21 @@ How to Use
 Developer
 
 Developed as part of a Mobile App Development academic project.
+
+Technical Implementation
+
+Database Management
+
+Smart Pantry Manager uses SQLite to store pantry ingredients locally on the Android device. Each ingredient contains a name, quantity, and measurement unit. Users can add, view, update, and delete ingredients.
+
+Recipe Suggestion Logic
+
+The application compares the ingredients and quantities stored in the pantry with the requirements of predefined recipes. Only recipes that can be prepared using the available ingredients and sufficient quantities are displayed.
+
+Input Validation
+
+The application validates ingredient information before saving it. Quantities must be greater than zero to prevent invalid pantry records.
+
+User Preferences
+
+The Settings screen allows users to save their preferred measurement unit using Android SharedPreferences.
