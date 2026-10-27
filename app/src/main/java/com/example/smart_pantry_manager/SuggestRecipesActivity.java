@@ -1,16 +1,17 @@
 package com.example.smart_pantry_manager;
 
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import android.database.Cursor;
-import android.widget.ListView;
+
 import java.util.ArrayList;
-import android.content.Intent;
 
 public class SuggestRecipesActivity extends AppCompatActivity {
 
